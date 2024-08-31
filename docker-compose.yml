@@ -16,5 +16,15 @@ services:
       dockerfile: php/Dockerfile
     ports:
       - "9000:9000"
+    links:
+      - "db:db"
+    environment:
+      PHP_ROOT: "/var/keebsocial" # Trailing slash required. Used for PHP includes.
     volumes:
       - "./web:/var/keebsocial"
+  db:
+    build:
+      context: .
+      dockerfile: mongodb/Dockerfile
+    ports:
+      - "27017:27017"
