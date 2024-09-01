@@ -1,0 +1,10 @@
+#profile_banner {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+#profile_bio {
+    width: 100px;
+    display: inline-block;
+}

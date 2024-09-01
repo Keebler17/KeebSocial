@@ -42,12 +42,12 @@ function cUserExists($username) {
 }
 
 function _isValidUserField($field) {
-    return ($field in $validUserFields);
+    return in_array($field, $validUserFields);
 }
 
 $validUserFields = [
     "username",
-    "name"
+    "name",
     "uuid",
     "date",
     "bio",

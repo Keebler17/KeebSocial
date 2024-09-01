@@ -41,7 +41,7 @@
           </script>
           <br>
           <div id="menuoptions">
-            <a href="/user"><p>Profile</p></a>
+            <a href="/user.php"><p>Profile</p></a>
             <a href="/settings"><p>Settings</p></a>
             <a href="javascript:logout()"><p>Log out</p></a>
           </div>
