@@ -46,6 +46,13 @@ function getNewToken($username, $password) {
     return $token;
 }
 
+function deleteToken($username, $token) {
+    global $keebsocial_users;
+    $keebsocial_users->users->updateOne(
+        ['username' => $username],
+        ['$pull' => ['tokens' => ['token' => $token]]]
+    );
+}
 /**
  * Clears all authentication tokens
  */
@@ -59,7 +66,7 @@ function clearTokens($username) {
 }
 
 /**
- * @return bool true if authenticated
+ * @return bool True if authenticated
  */
 function checkToken($username, $authtoken) {
     global $keebsocial_users;
@@ -81,7 +88,7 @@ function authenticate($username, $password) {
         ['username' => $username]
     );
  
-    return (password_verify($res->hash, $password) == 0);
+    return (password_verify($password, $res->hash) == true);
 
 }
 

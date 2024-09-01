@@ -1,51 +1,66 @@
 <?php
+require_once getenv("PHP_ROOT") . "/api/helper/DB.php";
 
-function getUserUUID($username) {
 
-}
-
-function getUserName($uuid) {
+function setUserField($username, $field, $value) {
 
 }
 
-function getUserDate($uuid) {
+function getUserField($username, $field) {
+    if(!cUserExists($username)) return 1;
+    if(!_isValidUserField($field)) return 0;
+    return $keebsocial_content->users->findOne(['username' => $username])->{$field};
+}
+
+function getUserArray($username, $field) {
 
 }
 
-function getUserBio($uuid) {
+function initializeUser($username, $name) {
+    global $keebsocial_content;
 
+    $keebsocial_content->users->insertOne([
+        'username' => $username,
+        'name' => $name,
+        'uuid' => uniqid(),
+        'date' => time(),
+        'bio' => 'KeebSocial User',
+        'keebs' => [],
+        'followers' => [],
+        'follows' => [],
+        'likes' => [],
+        'keebs_count' => 0,
+        'followers_count' => 0,
+        'follows_count' => 0,
+        'likes_count' => 0,
+        'private' => false
+    ]);
 }
 
-function getUserFollowers($uuid) {
-
+function cUserExists($username) {
+    return ($keebsocial_content->users->count(['username' => $username]) == 1);
 }
 
-function getUserFollows($uuid) {
-
+function _isValidUserField($field) {
+    return ($field in $validUserFields);
 }
 
-function getUserLikes($uuid) {
+$validUserFields = [
+    "username",
+    "name"
+    "uuid",
+    "date",
+    "bio",
+    "keebs_count",
+    "followers_count",
+    "follows_count",
+    "likes_count",
+    "private"
+];
 
-}
-
-function getUserKeebsCount($uuid) {
-
-}
-
-function getUserFollowersCount($uuid) {
-    
-}
-
-function getUserFollowsCount($uuid) {
-    
-}
-
-function getUserLikesCount($uuid) {
-    
-}
-
-function getUserKeebs($uuid) {
-    
-}
-
-function
+$validUserArrays = [
+    "keebs",
+    "followers",
+    "follows",
+    "likes"
+];

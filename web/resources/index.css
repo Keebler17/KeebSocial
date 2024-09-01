@@ -1,6 +1,10 @@
-[data-theme=dark] {
-    --background-color: #f8f8f8;
+:root {
+    --background-color: #fafafa;
+    --link-hover-color: #dfdfdf;
     --text-color: #222222;
+    --action-button-color: #3c77d6;
+    --action-button-hover: #2269db;
+    --action-button-text: #dddddd;
 }
 
 body {
@@ -21,17 +25,50 @@ body {
     font-size: 28px;
 }
 
+#homecorner {
+    margin-right: 20px;
+}
+
+#header {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 .navlink {
     font-size: 18px;
-    padding: 0px 20px 0px 20px;
+    padding: 3px 10px 3px 10px;
+    margin: 0px 15px 0px 15px;
+    transition: background-color 0.075s linear;
+    border-radius: 40px;
+    overflow: hidden;
 }
 
 .navlink:hover {
-    border-radius: 20px;
-    background: 
+    background-color: var(--link-hover-color)
 }
 
 a {
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
+    overflow: hidden;
+}
+
+#login {
+    float: right;
+    margin-top: 18px;
+    margin-right: 30px;
+    background-color: var(--action-button-color);
+    color: var(--action-button-text);
+    border-radius: 40px;
+    padding: 13px 15px 13px 15px;
+    transition: background-color 0.2s linear;
+}
+
+#login:hover {
+
+    background-color: var(--action-button-hover)
+}
+
+#profile {
+    display: hidden;
 }
