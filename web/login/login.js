@@ -22,8 +22,8 @@ async function login() {
     else if(respText == '0') document.getElementById("login_result").innerHTML = "Login failed. Incorrect password.";
     else { // Successful login
         document.getElementById("login_result").innerHTML = "";
-        document.cookie = "token=" + respText + "; expires=" + new Date(new Date().getTime() + (1 * 60 * 60 * 24 * 30)).toUTCString() + "; path=/";
-        document.cookie = "username=" + usernameInput + "; expires=" + new Date(new Date().getTime() + (1 * 60 * 60 * 24 * 30)).toUTCString() + "; path=/";
+        document.cookie = "token=" + respText + "; expires=" + new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30)).toUTCString() + "; path=/";
+        document.cookie = "username=" + usernameInput + "; expires=" + new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30)).toUTCString() + "; path=/";
         window.location.href = "/";
     }
 }

@@ -1,5 +1,5 @@
 <?php echo file_get_contents(getenv("PHP_ROOT") . "/resources/header.php"); ?>
 
-user page
+settings!
 
 <?php echo file_get_contents(getenv("PHP_ROOT") . "/resources/footer.php"); ?>

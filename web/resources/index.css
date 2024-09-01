@@ -17,7 +17,6 @@ body {
 }
 
 .navbarspan {
-    font-family: 'Helvetica';
     vertical-align: middle;
 }
 
@@ -32,6 +31,7 @@ body {
 #header {
     overflow: hidden;
     white-space: nowrap;
+    display: inline;
 }
 
 .navlink {
@@ -53,7 +53,7 @@ a {
     overflow: hidden;
 }
 
-#login {
+#login, #profile {
     float: right;
     margin-top: 18px;
     margin-right: 30px;
@@ -62,13 +62,65 @@ a {
     border-radius: 40px;
     padding: 13px 15px 13px 15px;
     transition: background-color 0.2s linear;
+    display: none;
+}
+
+#profile {
+    border-radius: 0px;
 }
 
 #login:hover {
-
     background-color: var(--action-button-hover)
 }
 
 #profile {
-    display: hidden;
+    margin-top: 0px;
+    background-color: var(--background-color);
+}
+
+#logout {
+    /* display: none; */
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    font-size: 18px;
+    padding: 3px 10px 3px 10px;
+    margin: 30px 15px 0px 15px;
+    float: right;
+    border-color: var(--action-button-color);
+    /* border-radius: ; */
+}
+
+#menuoptions {
+    display: none;
+    float: right;
+}
+
+
+#profilemenu {
+    display: inline;
+    float: right;
+    margin-right: 50px;
+}
+
+#menu {
+    display: inline;
+    float: right;
+}
+
+#menu:hover #menuoptions {
+    display: inline;
+    margin-right: 53px;
+    border-color: red;
+    background-color: var(--link-hover-color);
+    box-shadow: 2px 2px 2px 2px var(--link-hover-color), 2px 2px 2px 2px var(--link-hover-color);
+    text-align: right;
+}
+#menuoptions.p {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Helvetica';
 }

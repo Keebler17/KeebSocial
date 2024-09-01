@@ -14,3 +14,13 @@ function getCookie(cname) {
     }
     return "";
 }
+
+async function API(endpoint, body) {
+  const resp = await fetch(endpoint, {
+    method: 'POST',
+    body: JSON.stringify(body)
+  });
+
+  const text = await resp.text();
+  return text;
+}
