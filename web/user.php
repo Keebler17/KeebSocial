@@ -10,7 +10,8 @@
             exit();
         }
     }
-    echo "user page for " . $_GET['name'];
+
+    // if()
 ?>
 
 <script src="/resources/user.js"></script>
@@ -19,6 +20,8 @@
 <div id="profile_banner">
     <h1 id="profile_usernsame">Brendan KeebSocial</h1>
     <img id="profile_image" src="https://dummyimage.com/128/128/fff">
-    <span id="profile_bio">biobiobiobiobiobiobiobiobiobio</span>
+    <div id="profile_bio">this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio </div>
+    <button id="profile_follow">Follow</button>
+    <button id="profile_unfollow">Unfollow</button>
 </div>
 <?php echo file_get_contents(getenv("PHP_ROOT") . "/resources/footer.php"); ?>

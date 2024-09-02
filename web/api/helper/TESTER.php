@@ -1,9 +1,10 @@
 <?php
 
 require_once getenv("PHP_ROOT") . "/api/helper/USER_AUTH.php";
+require_once getenv("PHP_ROOT") . "/api/helper/USER.php";
 
-createUser("test", "test", "test");
-
+echo getUserField("test", "uuid");
+pullUserArray("test", "followers", 0);
 // if(!userExists("brendanjconnelly")) {
 //     echo "Creating user<br>";
 //     createUser("brendanjconnelly", "brendanjconnelly17@gmail.com", "keebler");

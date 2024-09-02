@@ -7,10 +7,50 @@ function setUserField($username, $field, $value) {
 }
 
 function getUserField($username, $field) {
-    if(!cUserExists($username)) return 1;
-    if(!_isValidUserField($field)) return 0;
+    global $keebsocial_content;
+    checkUserArguments($username, $field);
     return $keebsocial_content->users->findOne(['username' => $username])->{$field};
 }
+
+function pullUserArray($username, $field, $content) {
+    global $keebsocial_content;
+    checkUserArguments($username, $field);
+    $keebsocial_content->users->updateOne(
+        ['username' => $username],
+        ['$pull' => [
+            $field => $content
+        ]]
+    );
+}
+
+function pushUserArray($username, $field, $content) {
+    global $keebsocial_content;
+    checkUserArguments($username, $field);
+    $keebsocial_content->users->updateOne(
+        ['username' => $username],
+        ['$push' => [
+            $field => $content
+        ]]
+    );
+}
+
+function doesUserFollow($username, $target) {
+
+}
+
+function checkUserArguments($username, $field) {
+    if(!cUserExists($username)) return 2;
+    if(!_isValidUserField($field)) return 1;
+    return 0;
+}
+
+function addFollow($username, $target) {
+    if(cUserExists($username) && cUserExists($target)) {
+        
+    }
+}
+
+
 
 function getUserArray($username, $field) {
 
@@ -29,6 +69,7 @@ function initializeUser($username, $name) {
         'followers' => [],
         'follows' => [],
         'likes' => [],
+        'blocks' => [],
         'keebs_count' => 0,
         'followers_count' => 0,
         'follows_count' => 0,
@@ -38,11 +79,8 @@ function initializeUser($username, $name) {
 }
 
 function cUserExists($username) {
+    global $keebsocial_content;
     return ($keebsocial_content->users->count(['username' => $username]) == 1);
-}
-
-function _isValidUserField($field) {
-    return in_array($field, $validUserFields);
 }
 
 $validUserFields = [
@@ -64,3 +102,9 @@ $validUserArrays = [
     "follows",
     "likes"
 ];
+
+function _isValidUserField($field) {
+    global $validUserFields;
+    return in_array($field, $validUserFields);
+}
+

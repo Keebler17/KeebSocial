@@ -5,6 +5,31 @@
 }
 
 #profile_bio {
-    width: 100px;
+    width: 40%;
+    /* text-wrap: wrap; */
     display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    word-break: break-all;
+}
+
+#profile_follow, #profile_unfollow {
+    vertical-align: middle;
+    margin-bottom: 200px;
+    
+    padding: 10px;
+    border-radius: 50px;
+    width: 80px;
+    border-color: var(--action-button-color);
+    /* display: none; */
+}
+
+#profile_follow {
+    background-color: var(--action-button-color);
+    color: var(--action-button-text);
+}
+#profile_unfollow {
+    background-color: var(--background-color);
+    color: var(--action-button-color);
+    border-width: 2px;
 }

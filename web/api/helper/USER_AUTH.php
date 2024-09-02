@@ -70,7 +70,6 @@ function clearTokens($username) {
 function checkToken($username, $authtoken) {
     global $keebsocial_users;
     $tokens = $keebsocial_users->users->findOne(['username' => $username])->tokens;
-
     foreach($tokens as $token) {
         if(strcmp($token->token, $authtoken) == 0) return true;
     }
