@@ -27,10 +27,10 @@ if(!checkToken($data->user, $data->key)) {
     echo '3';
     exit();
 }
-// if(strcmp($data->user, $data->target) == 0) {
-//     echo '4';
-//     exit();
-// }
+if(strcmp($data->user, $data->target) == 0) {
+    echo '4';
+    exit();
+}
 
 
 if(isset($data->follow) && ($data->follow == 0)) { // if unfollow mode

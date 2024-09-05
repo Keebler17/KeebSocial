@@ -10,23 +10,22 @@
             exit();
         }
     }
-    echo "user page for <h1>" . $_GET['name'] . '</h1>';
 ?>
 
 <script src="/resources/user.js"></script>
 <link rel="stylesheet" href="/resources/user.css">
 <br>
 <div id="profile_banner">
-    <h1 id="profile_usernsame">Brendan KeebSocial</h1>
+    <div id="profile_id">
+        <h1 id="profile_username"></h1><span id="profile_handle"></span>
+    </div>
     <img id="profile_image" src="https://dummyimage.com/128/128/fff">
-    <div id="profile_bio">this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio this is a bio </div>
+    <div id="profile_bio"></div>
     <button onclick="follow();" id="profile_follow">Follow</button>
     <button onclick="unfollow();" id="profile_unfollow">Unfollow</button>
 </div>
-<div>
-    posts
-</div>
-
+<br><br><br>
+<?php include getenv("PHP_ROOT") . "/timeline/timeline.php"; ?>
 
 <script>init();</script>
 <?php echo file_get_contents(getenv("PHP_ROOT") . "/resources/footer.php"); ?>

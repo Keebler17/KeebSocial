@@ -4,6 +4,15 @@
     width: 50%;
 }
 
+#profile_username {
+    display: inline;
+}
+
+#profile_handle {
+    padding-left: 10px;
+    display: inline;
+}
+
 #profile_bio {
     width: 40%;
     /* text-wrap: wrap; */
@@ -14,8 +23,8 @@
 }
 
 #profile_follow, #profile_unfollow {
-    vertical-align: middle;
-    margin-bottom: 200px;
+    vertical-align: top;
+    /* margin-bottom: 200px; */
     
     padding: 10px;
     border-radius: 50px;
