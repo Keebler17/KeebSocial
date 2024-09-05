@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * LOGOUT.php
+ * Used to clear an authentication token. Not strictly required to log out, but probably a good idea.
+ */
 require_once getenv("PHP_ROOT") . "/api/helper/USER_AUTH.php";
 $data = json_decode(file_get_contents("php://input"));
 

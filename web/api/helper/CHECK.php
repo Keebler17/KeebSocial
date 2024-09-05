@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * CHECK.php
+ * DOES NOT WORK IN API
+ * Only for dynamically changing HTML
+ */
 require_once getenv("PHP_ROOT") . "/api/helper/USER_AUTH.php";
 $check_authenticated = false;
 if(isset($_COOKIE['username']) && isset($_COOKIE['token'])) {

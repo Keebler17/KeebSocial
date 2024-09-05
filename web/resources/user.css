@@ -21,7 +21,7 @@
     border-radius: 50px;
     width: 80px;
     border-color: var(--action-button-color);
-    /* display: none; */
+    display: none;
 }
 
 #profile_follow {

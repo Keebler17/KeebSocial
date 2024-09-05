@@ -2,6 +2,11 @@
 require_once getenv("PHP_ROOT") . "/api/helper/DB.php";
 
 /**
+ * USER_AUTH.php
+ * Utility functions for password database management
+ */
+
+/**
  * Checks if a username is registered
  * @return boolean Whether or not user is created
  */

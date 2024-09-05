@@ -18,7 +18,7 @@ services:
     links:
       - "db:db"
     environment:
-      PHP_ROOT: "/var/keebsocial" # Trailing slash required. Used for PHP includes.
+      PHP_ROOT: "/var/keebsocial" # No trailing slash. Used for PHP includes.
       PHP_DEBUG: 'true'
     volumes:
       - "./web:/var/keebsocial"

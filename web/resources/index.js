@@ -24,3 +24,12 @@ async function API(endpoint, body) {
   const text = await resp.text();
   return text;
 }
+
+// thanks stackoverflow lol
+// Returns the value of a GET parameter
+function getParam(param) {
+  var queryString = location.search;
+  let params = new URLSearchParams(queryString);
+  let data = params.get(param);
+  return data;
+}

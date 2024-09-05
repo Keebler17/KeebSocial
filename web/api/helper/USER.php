@@ -1,6 +1,16 @@
 <?php
 require_once getenv("PHP_ROOT") . "/api/helper/DB.php";
 
+/**
+ * USER.php
+ * Utility functions for displaying user info
+ */
+
+function getUsername($uuid) {
+    global $keebsocial_content;
+    $resp = $keebsocial_content->users->findOne(['uuid' => $uuid]);
+    return $resp->username;
+}
 
 function setUserField($username, $field, $value) {
 
@@ -34,8 +44,13 @@ function pushUserArray($username, $field, $content) {
     );
 }
 
-function doesUserFollow($username, $target) {
+function getUserArray($username, $field) {
 
+}
+
+function doesUserFollow($username, $target) {
+    global $keebsocial_content;
+    return ($keebsocial_content->users->count(["username" => $username, "follows" => getUserField($target, "uuid")]) >= 1);
 }
 
 function checkUserArguments($username, $field) {
@@ -44,17 +59,6 @@ function checkUserArguments($username, $field) {
     return 0;
 }
 
-function addFollow($username, $target) {
-    if(cUserExists($username) && cUserExists($target)) {
-        
-    }
-}
-
-
-
-function getUserArray($username, $field) {
-
-}
 
 function initializeUser($username, $name) {
     global $keebsocial_content;

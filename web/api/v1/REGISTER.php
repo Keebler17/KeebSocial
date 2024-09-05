@@ -2,6 +2,7 @@
 
 /**
  * REGISTER.PHP
+ * Used to register a new user in the password and in the accounts database
  * KI0001.1
  * @param user Username to register new account under
  * @param name name
