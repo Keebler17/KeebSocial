@@ -22,7 +22,7 @@ if(!isset($data->key) || !isset($data->target) || !isset($data->user) || !isset(
 }
 
 if(!_isValidUserField($data->field)) {
-    echo '20';
+    echo '10';
     exit();
 }
 

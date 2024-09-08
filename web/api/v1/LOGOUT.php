@@ -12,6 +12,6 @@ if(isset($data->username) && isset($data->token)) {
     echo '0';
     exit();
 }
-echo '1';
+echo '10';
 
 ?>

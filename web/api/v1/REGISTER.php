@@ -18,12 +18,12 @@ $data = json_decode(file_get_contents("php://input"));
 
 // bad params
 if(!isset($data->username) || !isset($data->name) || !isset($data->password)) {
-    echo '1';
+    echo '10';
     exit();
 }
 
 if(userExists($data->username)) {
-    echo '2';
+    echo '20';
     exit();
 }
 

@@ -15,7 +15,7 @@ require_once getenv("PHP_ROOT") . "/api/helper/USER_AUTH.php";
 $data = json_decode(file_get_contents('php://input'));
 
 if(!userExists($data->username)) {
-    echo '1';
+    echo '10';
     die();
 }
 

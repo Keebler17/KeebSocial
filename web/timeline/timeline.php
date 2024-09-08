@@ -15,3 +15,6 @@ $users = [$_COOKIE["username"]];
 <div id="timeline">
     <div class="post"></div>
 </div>
+<script>
+    initTimeline();
+</script>

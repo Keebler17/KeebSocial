@@ -13,7 +13,14 @@ function getUsername($uuid) {
 }
 
 function setUserField($username, $field, $value) {
-
+    global $keebsocial_content;
+    checkUserArguments($username, $field);
+    $keebsocial_content->users->updateOne(
+        ['username' => $username],
+        ['$set' =>
+            [$field => $value]
+        ]
+    );
 }
 
 function getUserField($username, $field) {
@@ -110,5 +117,15 @@ $validUserArrays = [
 function _isValidUserField($field) {
     global $validUserFields;
     return in_array($field, $validUserFields);
+}
+
+function buildUsernameQuery($usernameArr) {
+    $usernameQuery = [];
+    foreach($usernameArr as $user) {
+        array_push($usernameQuery, [
+            'author' => getUserField($user, "uuid")
+        ]);
+    }
+    return $usernameQuery;
 }
 

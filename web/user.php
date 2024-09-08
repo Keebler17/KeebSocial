@@ -25,6 +25,13 @@
     <button onclick="unfollow();" id="profile_unfollow">Unfollow</button>
 </div>
 <br><br><br>
+<?php
+
+if(strcmp($_GET['name'], $_COOKIE['username']) == 0) {
+    echo file_get_contents(getenv("PHP_ROOT") . "/timeline/createpost.php");
+}
+
+?>
 <?php include getenv("PHP_ROOT") . "/timeline/timeline.php"; ?>
 
 <script>init();</script>

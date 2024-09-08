@@ -16,7 +16,7 @@ require_once getenv("PHP_ROOT") . "/api/helper/USER_AUTH.php";
 $data = json_decode(file_get_contents("php://input"));
 
 if(!isset($data->key) || !isset($data->target) || !isset($data->user)) {
-    echo '1';
+    echo '10';
     exit();
 }
 if(!cUserExists($data->target) || !cUserExists($data->user)) {
@@ -24,11 +24,11 @@ if(!cUserExists($data->target) || !cUserExists($data->user)) {
     exit();
 }
 if(!checkToken($data->user, $data->key)) {
-    echo '3';
+    echo '30';
     exit();
 }
 if(strcmp($data->user, $data->target) == 0) {
-    echo '4';
+    echo '10';
     exit();
 }
 
@@ -36,6 +36,8 @@ if(strcmp($data->user, $data->target) == 0) {
 if(isset($data->follow) && ($data->follow == 0)) { // if unfollow mode
     pullUserArray($data->user, "follows", getUserField($data->target, "uuid")); // user follows target
     pullUserArray($data->target, "followers", getUserField($data->user, "uuid")); // target is followed by user
+    setUserField($data->user, "follows_count", getUserField($data->user, "follows_count") - 1);
+    setUserField($data->target, "followers_count", getUserField($data->target, "followers_count") - 1);
     echo '0';
     exit();
 }
@@ -43,12 +45,14 @@ if(isset($data->follow) && ($data->follow == 0)) { // if unfollow mode
 
 // but not if we already follow
 if(doesUserFollow($data->user, $data->target)) {
-    echo '4';
+    echo '10';
     exit();
 }
 
 pushUserArray($data->user, "follows", getUserField($data->target, "uuid")); // user follows target
 pushUserArray($data->target, "followers", getUserField($data->user, "uuid")); // target is followed by user
+setUserField($data->user, "follows_count", getUserField($data->user, "follows_count") + 1);
+setUserField($data->target, "followers_count", getUserField($data->target, "followers_count") + 1);
 
 echo '0';
 
