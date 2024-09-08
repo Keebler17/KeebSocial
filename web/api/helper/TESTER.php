@@ -7,7 +7,7 @@
 
 require_once getenv("PHP_ROOT") . "/api/helper/USER_AUTH.php";
 require_once getenv("PHP_ROOT") . "/api/helper/USER.php";
-require_once getenv("PHP_ROOT") . "/api/helper/KEEB.php";
+require_once getenv("PHP_ROOT") . "/api/helper/POST.php";
 
 // echo createPost("test", "This is the first Keeb on KeebSocial");
 // echo "<pre>";

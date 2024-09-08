@@ -1,7 +1,7 @@
 <?php
 
 /**
- * GETKEEB.php
+ * GETPOSTS.php
  * @param user invoker
  * @param key token
  * @param feed
@@ -30,8 +30,9 @@ if(!checkToken($data->user, $data->key)) {
     exit();
 }
 
-if(strcmp($data->user, $data->target) == 0) {
-    echo '40';
+if(!isset($data->index)) {
+    echo getPostCount($data->feed);
     exit();
 }
 
+echo json_encode(getPostByIndex($data->feed, $data->index));

@@ -15,7 +15,6 @@ require_once getenv("PHP_ROOT") . "/api/helper/USER.php";
 
 $data = json_decode(file_get_contents("php://input"));
 
-
 // bad params
 if(!isset($data->username) || !isset($data->name) || !isset($data->password)) {
     echo '10';
@@ -28,7 +27,6 @@ if(userExists($data->username)) {
 }
 
 // create acc
-
 
 createUser($data->username, "", $data->password); // registers user in the auth database (w/ blank email as argv[1])
 initializeUser($data->username, $data->name); // initializes user profile in the content database

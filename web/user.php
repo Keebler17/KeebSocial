@@ -14,6 +14,7 @@
 
 <script src="/resources/user.js"></script>
 <link rel="stylesheet" href="/resources/user.css">
+<link rel="stylesheet" href="/timeline/timeline.css">
 <br>
 <div id="profile_banner">
     <div id="profile_id">
@@ -32,7 +33,9 @@ if(strcmp($_GET['name'], $_COOKIE['username']) == 0) {
 }
 
 ?>
-<?php include getenv("PHP_ROOT") . "/timeline/timeline.php"; ?>
-
-<script>init();</script>
+<script src="/timeline/timeline.js"></script>
+<script>
+    init();
+    initTimeline([getParam("name")]);
+</script>
 <?php echo file_get_contents(getenv("PHP_ROOT") . "/resources/footer.php"); ?>

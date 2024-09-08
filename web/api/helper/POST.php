@@ -64,13 +64,20 @@ function getPostByIndex($usernameArr, $index) {
     }
     global $keebsocial_content;
 
-    return $keebsocial_content->posts->find(
+    $dbresp = $keebsocial_content->posts->find(
         ['$or' => buildUsernameQuery($usernameArr)],
         [
             'sort' => ['date' => -1],
             'limit' => $index-1
         ]
     );
+    $i = 0;
+    foreach($dbresp as $post) {
+        if($i == $index) {
+            return $post;
+        }
+        $i++;
+    }
 }
 
 function getPostCount($usernameArr) {
