@@ -35,4 +35,8 @@ if(!isset($data->index)) {
     exit();
 }
 
-echo json_encode(getPostByIndex($data->feed, $data->index));
+$response = getPostByIndex($data->feed, $data->index);
+
+$response->author = getUsername($response->author); 
+
+echo json_encode($response);

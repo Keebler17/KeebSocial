@@ -27,12 +27,15 @@
 </div>
 <br><br><br>
 <?php
-
 if(strcmp($_GET['name'], $_COOKIE['username']) == 0) {
     echo file_get_contents(getenv("PHP_ROOT") . "/timeline/createpost.php");
 }
-
 ?>
+
+<div id="posts">
+
+</div>
+
 <script src="/timeline/timeline.js"></script>
 <script>
     init();

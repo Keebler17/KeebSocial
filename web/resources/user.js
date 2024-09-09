@@ -18,15 +18,20 @@ async function getDisplayName() {
 async function getBio() {
     return getUserField('bio');
 }
-async function getUserField(field) {
+async function getUserField(field, user = null) {
+    if(user == null) {
+        user = getParam("name");
+    }
     let resp = await API("/api/v1/GETPROFILE.php", {
         key: getCookie("token"),
         user: getCookie("username"),
-        target: getParam("name"),
+        target: user,
         field: field
     });
     return resp;
 }
+
+
 async function follow() {
     let resp = await API("/api/v1/FOLLOW.php", {
         key: getCookie("token"),

@@ -25,20 +25,7 @@
         </div>
         <a href="/login" id="login"><span class="navbarspan">Login</span></a>
         <div id="menu">
-          <a href="javascript:void" id="profile"><span class="navbarspan"><img src="https://dummyimage.com/64/64/fff"></a>
-          <script>
-            isLoggedIn().then(
-              value => {
-                if(value == '0') {
-                  document.getElementById("login").style.display = 'none';
-                  document.getElementById("profile").style.display = 'inline';
-                } else {
-                  document.getElementById("login").style.display = 'inline';
-                  document.getElementById("profile").style.display = 'none';
-                }
-              }
-            );
-          </script>
+          <a href="javascript:void" id="profile"><img src="https://dummyimage.com/64/64/fff"></a>
           <br>
           <div id="menuoptions">
             <a href="/user.php"><p>Profile</p></a>
@@ -46,4 +33,17 @@
             <a href="javascript:logout()"><p>Log out</p></a>
           </div>
         </div>
+        <script>
+            isLoggedIn().then(
+              value => {
+                if(value == '0') {
+                  document.getElementById("login").style.display = 'none';
+                  document.getElementById("profile").style.display = 'inline-block';
+                } else {
+                  document.getElementById("login").style.display = 'inline-block';
+                  document.getElementById("profile").style.display = 'none';
+                }
+              }
+            );
+          </script>
       </div>

@@ -5,6 +5,11 @@
     --action-button-color: #3c77d6;
     --action-button-hover: #2269db;
     --action-button-text: #dddddd;
+    --border-color: #999999;
+}
+
+* {
+    /* border: 1px solid; */
 }
 
 body {
@@ -67,55 +72,55 @@ a {
 
 #profile {
     border-radius: 0px;
+    padding-bottom: 0px;
+}
+
+
+
+#profile {
+    margin-top: 0px;
+    background-color: var(--background-color);
+    padding-bottom: 0px;
+    line-height: 0px;
+}
+
+
+#logout {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 18px;
+    padding: 3px 10px 3px 10px;
+    margin: 30px 15px 0px 15px;
+    float: right;
+    border-color: var(--action-button-color);
+}
+
+
+#menu {
+    display: inline;
+    float: right;
+    padding-top: 0px;
+}
+
+#menuoptions {
+    display: none;
+    float: right;
+    margin-right: 46px;
+    border-color: red;
+    background-color: var(--link-hover-color);
+    box-shadow: 2px 2px 2px 2px var(--link-hover-color), 2px 2px 2px 2px var(--link-hover-color);
+    text-align: right;
+    padding: 5px;
+}
+
+#menu:hover #menuoptions {
+    display: inline;
 }
 
 #login:hover {
     background-color: var(--action-button-hover)
 }
 
-#profile {
-    margin-top: 0px;
-    background-color: var(--background-color);
-}
-
-#logout {
-    /* display: none; */
-    background-color: var(--background-color);
-    color: var(--text-color);
-
-    font-size: 18px;
-    padding: 3px 10px 3px 10px;
-    margin: 30px 15px 0px 15px;
-    float: right;
-    border-color: var(--action-button-color);
-    /* border-radius: ; */
-}
-
-#menuoptions {
-    display: none;
-    float: right;
-}
-
-
-#profilemenu {
-    display: inline;
-    float: right;
-    margin-right: 50px;
-}
-
-#menu {
-    display: inline;
-    float: right;
-}
-
-#menu:hover #menuoptions {
-    display: inline;
-    margin-right: 53px;
-    border-color: red;
-    background-color: var(--link-hover-color);
-    box-shadow: 2px 2px 2px 2px var(--link-hover-color), 2px 2px 2px 2px var(--link-hover-color);
-    text-align: right;
-}
 #menuoptions.p {
     padding: 0px;
     margin: 0px;

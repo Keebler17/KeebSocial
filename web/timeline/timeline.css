@@ -1,0 +1,28 @@
+.post {
+    width: 50%;
+    margin: auto;
+    border: 1px solid;
+    border-color: var(--border-color);
+    padding: 15px;
+    border-radius: 50px;
+}
+
+.postbanner {
+}
+
+.author, .handle, .date {
+    padding-left: 10px;
+}
+
+.author {
+    font-size: 1.5em;
+}
+
+.date {
+    font-size: 0.9em;
+}
+
+.post img {
+    vertical-align: middle;
+    border-radius: 64px;
+}
