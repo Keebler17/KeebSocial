@@ -37,6 +37,6 @@ if(!isset($data->index)) {
 
 $response = getPostByIndex($data->feed, $data->index);
 
-$response->author = getUsername($response->author); 
+$response->author = getUsername($response->author); // instead of giving the caller the uuid of the author, give them the user handle
 
 echo json_encode($response);

@@ -1,0 +1,9 @@
+#postbody {
+    resize: none;
+    width: 98%;
+    min-height: 100px;
+    max-height: fit-content;
+    border: none;
+    background-color: var(--background-color);
+    display: block;
+}
