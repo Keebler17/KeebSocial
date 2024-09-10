@@ -1,4 +1,4 @@
-async function post() {
+async function registerPost() {
     API("/api/v1/ACT.php", {
         user: getParam("name"),
         key: getCookie("token"),

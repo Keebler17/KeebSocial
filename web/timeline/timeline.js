@@ -7,6 +7,7 @@ async function initTimeline(users) {
         feed: users
     });
 
+
     for(let i = 0; i < dbPostsCount; i++) {
         let resp = await API("/api/v1/GETPOSTS.php", {
             user: getCookie("username"),
@@ -15,7 +16,6 @@ async function initTimeline(users) {
             index: i
         });
         let post = await toHTML(JSON.parse(resp));
-        console.log(JSON.parse(resp));
         document.getElementById("posts").appendChild(post);
     }
 }
