@@ -68,7 +68,7 @@ function getPostByIndex($usernameArr, $index) {
         ['$or' => buildUsernameQuery($usernameArr)],
         [
             'sort' => ['date' => -1],
-            'limit' => $index-1
+            'limit' => $index+1
         ]
     );
     $i = 0;

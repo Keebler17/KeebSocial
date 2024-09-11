@@ -5,4 +5,5 @@ async function registerPost() {
         action: "POST",
         content: document.getElementById("postbody").value
     })
+    window.location.reload();
 }

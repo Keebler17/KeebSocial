@@ -8,11 +8,6 @@
     display: block;
 }
 
-#createpost {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 #postbutton {
     background-color: var(--action-button-color);
     color: var(--action-button-text);

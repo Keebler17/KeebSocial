@@ -41,12 +41,12 @@ async function toHTML(postobject) {
     
     author = document.createElement("span");
     author.setAttribute("class", "author");
-    author.innerHTML = postobject.author;
+    author.innerHTML = await getUserField("name", postobject.author);
     bannerDiv.appendChild(author);
 
     handle = document.createElement("span");
     handle.setAttribute("class", "handle");
-    handle.innerHTML = "@" + await getUserField("name", postobject.author);
+    handle.innerHTML = "@" + postobject.author;
     bannerDiv.appendChild(handle);
 
     date = document.createElement("span");

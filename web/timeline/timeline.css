@@ -5,6 +5,8 @@
     border-color: var(--border-color);
     padding: 15px;
     border-radius: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .postbanner {
