@@ -52,7 +52,11 @@ function pushUserArray($username, $field, $content) {
 }
 
 function getUserArray($username, $field) {
-
+    global $keebsocial_content;
+    checkUserArguments($username, $field);
+    return $keebsocial_content->users->findOne(
+        ['username' => $username]
+    )->{$field};
 }
 
 function doesUserFollow($username, $target) {
@@ -116,7 +120,8 @@ $validUserArrays = [
 
 function _isValidUserField($field) {
     global $validUserFields;
-    return in_array($field, $validUserFields);
+    global $validUserArrays;
+    return in_array($field, $validUserFields) || in_array($field, $validUserArrays);
 }
 
 function buildUsernameQuery($usernameArr) {

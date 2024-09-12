@@ -1,12 +1,12 @@
 var dbPostsCount = -1;
 
 async function initTimeline(users) {
+
     dbPostsCount = await API("/api/v1/GETPOSTS.php", {
         user: getCookie("username"),
         key: getCookie("token"),
         feed: users
     });
-
 
     for(let i = 0; i < dbPostsCount; i++) {
         let resp = await API("/api/v1/GETPOSTS.php", {
@@ -23,7 +23,11 @@ async function initTimeline(users) {
 
 
 async function getFeed() {
-
+    feed = await API("/api/v1/FEEDQUERY.php", {
+        user: getCookie("username"),
+        field: "follows"
+    });
+    return JSON.parse(feed);
 }
 
 async function toHTML(postobject) {

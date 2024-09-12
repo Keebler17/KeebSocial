@@ -1,4 +1,3 @@
-<script src="/timeline/createpost.js"></script>
 <div id="createpost" class="post">
     <textarea id="postbody" placeholder="Write a post..."></textarea>
     <button id="postbutton" onclick="registerPost();">Post</button>

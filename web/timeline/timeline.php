@@ -9,12 +9,15 @@
 
 $users = [$_COOKIE["username"]];
 
-
 ?>
 
-<div id="timeline">
-    <div class="post"></div>
+<link rel="stylesheet" href="/timeline/timeline.css">
+<div id="posts">
 </div>
 <script>
-    initTimeline();
+    async function runTimeline() {
+        feed = await getFeed();
+        initTimeline(feed);
+    }
+    runTimeline();
 </script>

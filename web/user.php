@@ -12,7 +12,6 @@
     }
 ?>
 
-<script src="/resources/user.js"></script>
 <link rel="stylesheet" href="/resources/user.css">
 <link rel="stylesheet" href="/timeline/timeline.css">
 <br>
@@ -36,7 +35,6 @@ if(strcmp($_GET['name'], $_COOKIE['username']) == 0) {
 
 </div>
 
-<script src="/timeline/timeline.js"></script>
 <script>
     init();
     initTimeline([getParam("name")]);

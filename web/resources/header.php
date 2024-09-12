@@ -9,8 +9,14 @@
         <link rel="icon" type="image/x-icon" href="/resources/icon.png">
         <link rel="stylesheet" href="/resources/index.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+        <script src="/resources/user.js"></script>
+        <script src="/timeline/timeline.js"></script>
         <script src="/resources/index.js"></script>
         <script src="/resources/auth.js"></script>
+        <script src="/login/login.js"></script>
+        <script src="/timeline/createpost.js"></script>
+
     </head>
     <body>
       <div>

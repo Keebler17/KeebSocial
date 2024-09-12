@@ -1,5 +1,4 @@
 <?php echo file_get_contents(getenv("PHP_ROOT") . "/resources/header.php"); ?>
-<script src="/login/login.js"></script>
 <p>no emails yet :(</p>
 <br><br>
 
