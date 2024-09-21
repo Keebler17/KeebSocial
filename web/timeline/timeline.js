@@ -30,6 +30,7 @@ async function getFeed() {
     return JSON.parse(feed);
 }
 
+
 async function toHTML(postobject) {
     post = document.createElement("div");
     post.setAttribute("id", postobject.uuid);
@@ -64,4 +65,16 @@ async function toHTML(postobject) {
     content.innerHTML = postobject.content;
     post.appendChild(content);
     return post;
+}
+
+// Called by viewpost.php
+async function viewpost() {
+    resp = await API("/api/v1/GETPOSTS.php", {
+        user: getCookie("username"),
+        key: getCookie("token"),
+        uuid: getParam("id")
+    });
+
+    obj = await toHTML(JSON.parse(resp));
+    document.getElementById("posts").appendChild(obj);
 }

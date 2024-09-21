@@ -20,7 +20,7 @@ require_once getenv("PHP_ROOT") . "/api/helper/POST.php";
 
 $data = json_decode(file_get_contents("php://input"));
 
-if(!isset($data->key) || !isset($data->feed) || !isset($data->user)) {
+if(!isset($data->key) || !isset($data->user)) {
     echo '1';
     exit();
 }
@@ -30,13 +30,25 @@ if(!checkToken($data->user, $data->key)) {
     exit();
 }
 
+if(isset($data->uuid)) {
+    $response = getPost($data->uuid);
+    rewriteAuthor($response);
+    echo json_encode($response);
+    exit();
+}
+
 if(!isset($data->index)) {
     echo getPostCount($data->feed);
     exit();
 }
 
+
 $response = getPostByIndex($data->feed, $data->index);
 
-$response->author = getUsername($response->author); // instead of giving the caller the uuid of the author, give them the user handle
+rewriteAuthor($response); // instead of giving the caller the uuid of the author, give them the user handle
 
 echo json_encode($response);
+
+function rewriteAuthor($response) {
+    $response->author = getUsername($response->author);
+}
