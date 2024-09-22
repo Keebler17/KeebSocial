@@ -7,7 +7,7 @@
  * @param action POST|LIKE|REPLY|REKEEB
  * @param uuid[opt] uuid of target
  * @param content[opt] only for action=POST|REPLY
- * @return 
+ * @return uuid of the post if applicable
  */
 require_once getenv("PHP_ROOT") . "/api/helper/USER_AUTH.php";
 require_once getenv("PHP_ROOT") . "/api/helper/USER.php";

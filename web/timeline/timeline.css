@@ -24,7 +24,31 @@
     font-size: 0.9em;
 }
 
-.post img {
+.postico {
     vertical-align: middle;
     border-radius: 64px;
+}
+
+.postoptions {
+    width: 18px;
+    height: auto;
+    float: right;
+
+    padding-top: 30px;
+    padding-right: 16px;
+    border-radius: 0px;
+    
+    cursor: pointer;
+}
+
+.menuOptions {
+    position: relative;
+    display: inline;
+    top: 60px;
+    left: 95%;
+    font-weight: bold;
+}
+
+.deleteText {
+    color: red;
 }
