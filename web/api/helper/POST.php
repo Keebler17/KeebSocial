@@ -30,8 +30,9 @@ function pushPostArray($uuid, $field, $content) {
 function createPost($username, $content) {
     global $keebsocial_content;
     if(strcmp($content, '') == 0) return 1;
+    $uuid = uniqid();
     $keebsocial_content->posts->insertOne([
-        'uuid' => uniqid(),
+        'uuid' => $uuid,
         'author' => getUserField($username, 'uuid'),
         'content' => $content,
         'parent' => '',
@@ -43,7 +44,7 @@ function createPost($username, $content) {
         'replies_count' => 0,
         'date' => time()
     ]);
-    return 0;
+    return $uuid;
 }
 
 // uuid of parent keeb

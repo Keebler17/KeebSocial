@@ -28,6 +28,8 @@ if(!checkToken($data->user, $data->key)) {
 
 if(strcmp($data->action, "POST") == 0) {
     createPost($data->user, $data->content);
+
+    exit();
 }
 
 echo '0';
